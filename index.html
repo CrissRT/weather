@@ -12,13 +12,44 @@
     <div class="loader-container">
         <div class="spinner"></div>
     </div>
-    
+
     <div class="main-app default-main-app">
         <form class="search-bar">
             <i class="bi bi-globe-americas"></i>
             <input type="text" id="search-input" placeholder="Enter a city name" maxlength="50" autocomplete="off">
             <button type="submit" id="search-button"><i class="bi bi-search"></i></button>
         </form>
+
+        <div class="all-info-container">
+            <div class="main-info">
+                <h2 class="city-country"></h2>
+                <img src="#" alt="">
+                <h3 class="show-temperature-celsius"></h3>
+                <p class="weather-description"></p>
+            </div>
+
+            <div class="wrapper-container-flex-row">
+                <div class="container-additional-weather">
+                    <div class="weather-icons">
+                        <i class="bi bi-water"></i>
+                    </div>
+                    <div class="additional-info">
+                        <p>Humidity</p>
+                        <div id="humidity-index"></div>
+                    </div>
+                </div>
+    
+                <div class="container-additional-weather">
+                    <div class="weather-icons">
+                        <i class="bi bi-wind"></i>
+                    </div>
+                    <div class="additional-info">
+                        <p>Wind Speed</p>
+                        <div id="wind-speed-index"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Scripts -->

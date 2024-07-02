@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function weather_api_testing(city) {
-        return new Error("asb")
+        return new Error()
         return (
             {
                 coord: {

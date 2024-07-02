@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Get info from API
         const weather_data_from_api = weather_api_testing(city);
-        if (parseInt(weather_data_from_api.cod) !== 200 || weather_data_from_api.hasOwnProperty("message")) {
+        if (parseInt(weather_data_from_api.co) !== 200 || weather_data_from_api.hasOwnProperty("message")) {
             loaderContainer.style.display = 'none';
             const alert_container = document.createElement("div");
             alert_container.classList.add("alert-api");
