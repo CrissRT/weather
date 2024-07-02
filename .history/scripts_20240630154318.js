@@ -1,0 +1,6 @@
+function submit_process() {
+    // Validate form inputs
+    const search_input = document.querySelectorAll('#search-input');
+    const text_
+    
+}

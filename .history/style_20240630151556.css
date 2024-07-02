@@ -1,0 +1,30 @@
+body {
+    width: 100%;
+    margin: 0;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-app{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:white;
+    border-radius: 10px;
+    margin: 30px 0 30px 0;
+    box-shadow: rgb(42, 42, 42) 10px 10px 10px;
+}
+
+/* Use this class when a user searched the location */
+.searched-location-main-app {
+    width: 550px;
+    height: 750px;
+}
+
+/* Use this class when a user firstly entered your app */
+.default-main-app {
+    width: 
+}

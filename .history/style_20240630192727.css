@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap');
+
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Applies the font style */
+.main-app * {
+    font-family: "Playwrite IT Moderna", cursive;
+    font-optical-sizing: auto;
+    font-weight: 16px;
+    font-style: normal;
+}
+
+
+/* Style for main app in all cases */
+.main-app{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:white;
+    border-radius: 10px;
+    box-shadow: rgb(42, 42, 42) 10px 10px 10px;
+}
+
+.search-bar {
+    padding : 10px
+}
+
+/* Use this class when a user searched the location */
+.searched-location-main-app {
+    width: 550px;
+    height: 750px;
+}
+
+/* Use this class when a user firstly entered your app */
+.default-main-app {
+    width: 300px;
+    height: 100px;
+}
+
+.suggestions-on-main-app {
+    height: fit-content;
+}
+
+#search-input {
+    outline: none;
+    border: none;
+}
+
+#search-button {
+    background-color: rgb(42, 42, 42);
+    color: white;
+    padding: 5px 12px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#suggestions {
+    display: none;
+}
