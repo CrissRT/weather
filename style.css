@@ -39,7 +39,6 @@ body {
 .display-weather-info {
     width: 550px;
     height:fit-content;
-    /* max-height: 1000px; */
 }
 
 /* Use this class when a user firstly entered your app */
@@ -53,7 +52,6 @@ body {
     border: none;
     font-size: 20px;
     max-width: 80%;
-    /* padding: 0; */
 }
 
 .search-bar {

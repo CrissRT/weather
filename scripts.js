@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
         main_app.classList.remove("default-main-app");
 
         // Get info from API
-        const weather_data_from_api = weather_api(city);
+        const weather_data_from_api = weather_api_testing(city);
         if (parseInt(weather_data_from_api.cod) !== 200 || weather_data_from_api.hasOwnProperty("message")) {
             loaderContainer.style.display = 'none';
             const error_container = document.querySelector(".errors");
@@ -35,28 +35,35 @@ document.addEventListener("DOMContentLoaded", function() {
         };
         
         document.querySelector(".all-info-container").style.display = "flex";
-
+        const body = document.querySelector("body");
         const image = document.querySelector("img")
         if (weather_data_from_api.weather[0].description.includes("clear")){
-            image.src = "./images/clear.png"
-            image.alt = "Clear Sky";;
+            image.src = "./images/clear.png";
+            image.alt = "Clear Sky";
+            body.style.backgroundImage = `url("./images/clear-sky.svg")`;
         }
         else if (weather_data_from_api.weather[0].description.includes("mist")){
             image.src = "./images/mist.png";
             image.alt = "Mist";
+            body.style.backgroundImage = `url("./images/mist.svg")`;
         }
         else if (weather_data_from_api.weather[0].description.includes("snow")){
-            image.src = "./images/snow.png"
-            image.alt = "Snow"
+            image.src = "./images/snow.png";
+            image.alt = "Snow";
+            body.style.backgroundImage = `url("./images/snowy.svg")`;
         }
         else if (weather_data_from_api.weather[0].description.includes("rain")){
             image.src = "./images/rain.png"
             image.alt = "Rain"
+            body.style.backgroundImage = `url("./images/rainy.svg")`;
         }
         else if (weather_data_from_api.weather[0].description.includes("cloud")){
             image.src = "./images/cloud.png"
             image.alt = "Clouds"
+            body.style.backgroundImage = `url("./images/cloudy.svg")`;
         }
+
+        body.style.backgroundSize = "cover";
 
         const city_country = document.querySelector(".city-country");
         city_country.textContent = `${weather_data_from_api.name}, ${weather_data_from_api.sys.country}`;
