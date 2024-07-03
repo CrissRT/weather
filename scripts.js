@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
         main_app.classList.remove("default-main-app");
 
         // Get info from API
-        const weather_data_from_api = weather_api_testing("test");
+        const weather_data_from_api = weather_api(city);
         if (parseInt(weather_data_from_api.cod) !== 200 || weather_data_from_api.hasOwnProperty("message")) {
             loaderContainer.style.display = 'none';
             const error_container = document.querySelector(".errors");
