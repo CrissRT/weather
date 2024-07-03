@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
         main_app.classList.remove("default-main-app");
 
         // Get info from API
-        const weather_data_from_api = weather_api_testing(city);
+        const weather_data_from_api = weather_api_testing("test");
         if (parseInt(weather_data_from_api.cod) !== 200 || weather_data_from_api.hasOwnProperty("message")) {
             loaderContainer.style.display = 'none';
             const error_container = document.querySelector(".errors");
@@ -86,54 +86,62 @@ document.addEventListener("DOMContentLoaded", function() {
         loaderContainer.style.display = 'none';
     }
     
-    function weather_api_testing(city) {
-        // return new Error("asb")
-        return (
-            {
-                coord: {
-                  lon: -89.1028,
-                  lat: 30.438
-                },
-                weather: [
-                  {
-                    id: 800,
-                    main: "Clear",
-                    description: "clear sky",
-                    icon: "01n"
-                  }
-                ],
-                base: "stations",
-                main: {
-                  temp: 49.46,
-                  feels_like: 44.89,
-                  temp_min: 45.68,
-                  temp_max: 51.8,
-                  pressure: 1030,
-                  humidity: 59
-                },
-                visibility: 10000,
-                wind: {
-                  speed: 11.5,
-                  deg: 50,
-                  gust: 20.71
-                },
-                clouds: {
-                  all: 0
-                },
-                dt: 1702548828,
-                sys: {
-                  type: 2,
-                  id: 2015175,
-                  country: "US",
-                  sunrise: 1702557907,
-                  sunset: 1702594622
-                },
-                timezone: -21600,
-                id: 4429197,
-                name: "Landon",
-                cod: 200
-              }
-        )
+    function weather_api_testing(test) {
+        switch (test){
+            case "error":
+                return {
+                    cod: 404,
+                    message: "city not found"
+                }
+                
+            case "test":
+                return (
+                    {
+                        coord: {
+                          lon: -89.1028,
+                          lat: 30.438
+                        },
+                        weather: [
+                          {
+                            id: 800,
+                            main: "Clear",
+                            description: "clear sky",
+                            icon: "01n"
+                          }
+                        ],
+                        base: "stations",
+                        main: {
+                          temp: 49.46,
+                          feels_like: 44.89,
+                          temp_min: 45.68,
+                          temp_max: 51.8,
+                          pressure: 1030,
+                          humidity: 59
+                        },
+                        visibility: 10000,
+                        wind: {
+                          speed: 11.5,
+                          deg: 50,
+                          gust: 20.71
+                        },
+                        clouds: {
+                          all: 0
+                        },
+                        dt: 1702548828,
+                        sys: {
+                          type: 2,
+                          id: 2015175,
+                          country: "US",
+                          sunrise: 1702557907,
+                          sunset: 1702594622
+                        },
+                        timezone: -21600,
+                        id: 4429197,
+                        name: "Landon",
+                        cod: 200
+                    }
+                )
+        }
     }
     
     async function weather_api(city) {

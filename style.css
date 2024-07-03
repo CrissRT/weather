@@ -7,7 +7,8 @@ html, body {
 }
 
 body {
-    background-color: aqua;
+    background-image: url("./images/standard.jpg");
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,7 +108,6 @@ span {
 
 .weather-icons {
     width: 100%;
-    /* height: 100px; */
     margin-right: 5px;
 }
 
