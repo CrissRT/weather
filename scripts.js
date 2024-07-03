@@ -21,14 +21,16 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();
         const city = search_input.value;
 
+        // Add/remove classes from main_app div
+        main_app.classList.add("display-weather-info");
+        main_app.classList.remove("default-main-app");
+
         // Get info from API
         const weather_data_from_api = weather_api_testing(city);
         if (parseInt(weather_data_from_api.cod) !== 200 || weather_data_from_api.hasOwnProperty("message")) {
             loaderContainer.style.display = 'none';
-            const alert_container = document.createElement("div");
-            alert_container.classList.add("alert-api");
-            alert_container.textContent = "Has been produced an error!";
-            main_app.appendChild(alert_container);
+            const error_container = document.querySelector(".errors");
+            error_container.style.display = "flex";
             return;
         };
         
@@ -56,10 +58,6 @@ document.addEventListener("DOMContentLoaded", function() {
             image.alt = "Clouds"
         }
 
-        // Add/remove classes from main_app div
-        main_app.classList.add("display-weather-info");
-        main_app.classList.remove("default-main-app");
-
         const city_country = document.querySelector(".city-country");
         city_country.textContent = `${weather_data_from_api.name}, ${weather_data_from_api.sys.country}`;
 
@@ -80,9 +78,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
         loaderContainer.style.display = 'none';
     }
-
+    
     function weather_api_testing(city) {
-        return new Error("asb")
+        // return new Error("asb")
         return (
             {
                 coord: {
@@ -130,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function() {
               }
         )
     }
-
+    
     async function weather_api(city) {
         const url = `https://open-weather13.p.rapidapi.com/city/${city}/EN`;
         const options = {

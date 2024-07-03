@@ -137,14 +137,6 @@ span {
     justify-content: center;
     align-items: center;
     min-width: 100px;
-    /* flex-wrap: nowrap; */
-    /* width: 200px;
-    height: 200px;
-    border-radius: 10px;
-    box-shadow: rgb(42, 42, 42) 10px 10px 10px;
-    padding : 10px;
-    max-width: 1000px;
-    min-width: 200px; */
 }
 
 
@@ -179,11 +171,11 @@ span {
     opacity: 0.7;
 }
 
-/* Alerts */
-.alert-api {
-    display: flex;
-    align-items: center;
+.errors {
     width: 100%;
+    display: none;
+    flex-direction: column;
     justify-content: center;
+    align-items:center;
 }
 
